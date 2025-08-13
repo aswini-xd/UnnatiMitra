@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Udyogimitra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .tab-btn {
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.375rem;
+        background-color: #e5e7eb;
+        color: black;
+        transition: background 0.3s;
+      }
+      .tab-btn:hover {
+        background-color: #d1d5db;
+      }
+      .active-tab {
+        background-color: #2563eb !important;
+        color: white !important;
+      }
+      .inactive-box {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      /* Education */
+      .hover-card {
+        background: linear-gradient(to right, #ffffff, #ffffff);
+        background-size: 200% 100%;
+        background-position: right;
+        transition: background-position 0.5s ease;
+      }
+      .hover-card:hover {
+        background-position: left;
+        background-image: linear-gradient(to right, #47d6fd, #fff);
+      }
+      /* carrier */
+       .sticky-apply {
+      position: sticky;
+      bottom: 0;
+      background-color: white;
+      padding: 16px;
+      border-top: 1px solid #e5e7eb;
+      text-align: right;
+    }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 w-full bg-gradient-to-r from-blue-500 to-pink-500 shadow-md  z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+       
+        <div class="flex items-center">
+          <img
+            src="./img/logo.jpeg"
+            alt="Udyogimitra Logo"
+            class="h-20 w-auto rounded-lg"
+          />
+        </div>
+
+<div class="hidden md:flex flex-1 justify-center">
+  <div class="relative w-1/2">
+    <input
+      id="desktop-search"
+      type="text"
+      placeholder="Search..."
+      class="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none"
+    />
+    <button
+      onclick="clearSearch('desktop-search')"
+      class="absolute inset-y-0 right-2 flex items-center text-gray-500 hover:text-blue-600"
+      title="Clear"
+    >
+      ➜
+    </button>
+  </div>
+</div>
+
+
+        
+        <div class="hidden md:flex space-x-6 items-end text-white font-medium">
+          <a href="About.html" class="hover:text-yellow-200">About</a>
+          <a href="Project.html" class="hover:text-yellow-200">Project</a>
+          <a href="Services.html" class="hover:text-yellow-200">Services</a>
+          <a href="Event.html" class="hover:text-yellow-200">Event</a>
+          <a href="Livelihood.html" class="hover:text-yellow-200">Livelihood</a>
+          <a href="Education.html" class="hover:text-yellow-200">Education</a>
+          <a href="Carrer.html" class="hover:text-yellow-200">Career</a>
+        </div>
+
+       
+        <div class="md:hidden">
+          <button id="hamburger-btn">
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500 to-pink-500 z-40 p-6 mt-3 space-y-6 hidden md:hidden text-white"
+    >
+      <button id="close-menu" class="text-xl font-bold mb-4">✖</button>
+      <a href="About.html" class="block text-lg">About</a>
+      <a href="Project.html" class="block text-lg">Project</a>
+      <a href="Services.html" class="block text-lg">Services</a>
+      <a href="Event.html" class="block text-lg">Event</a>
+      <a href="Livelihood.html" class="block text-lg">Livelihood</a>
+      <a href="Education.html" class="block text-lg">Education</a>
+      <a href="Carrer.html" class="block text-lg">Career</a>
+
+     
+<button
+  id="mobile-search-btn"
+  class="md:hidden mt-4 bg-white text-black px-4 py-2 rounded flex items-center justify-center"
+>
+  🔍 Show Search
+</button>
+
+
+<div id="mobile-search-box" class="hidden mt-2 w-full md:hidden px-4">
+  <div class="relative">
+    <input
+      id="mobile-search"
+      type="text"
+      placeholder="Search..."
+      class="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none"
+    />
+    <button
+      onclick="clearSearch('mobile-search')"
+      class="absolute inset-y-0 right-2 flex items-center text-gray-500 hover:text-blue-600"
+      title="Clear"
+    >
+      ➜
+    </button>
+  </div>
+</div>
+
+
+ </div>
+
+    </div>
+
+    <!-- slider -->
+
+    <!-- hero section start -->
+    <section>
+      <div class="max-w-7xl mx-auto mt-32 px-4 md:flex gap-6">
+        
+        <div
+          class="md:w-[70%] w-full relative overflow-hidden rounded-lg shadow-lg"
+        >
+          <div
+            id="slider"
+            class="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
+          >
+            <!-- Slide 1 -->
+            <div
+              class="slide absolute inset-0 transition-opacity duration-1000 opacity-100"
+            >
+              <img
+                src="./img/banner-1.webp"
+                class="w-full h-full object-cover rounded-lg"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-start p-4 sm:p-6 text-white"
+              >
+                <h2 class="text-xl sm:text-2xl font-bold">Skill Upliftment</h2>
+                <p class="text-sm sm:text-base mt-1">
+                  Empowering youth through skill-building initiatives.
+                </p>
+                <button
+                  class="mt-3 bg-white text-black px-3 py-1 rounded hover:bg-gray-200 text-sm sm:text-base"
+                >
+                  View More
+                </button>
+              </div>
+            </div>
+
+            <!-- slide-2 -->
+            <div
+              class="slide absolute inset-0 transition-opacity duration-1000 opacity-0"
+            >
+              <img
+                src="./img/banner-2.webp"
+                class="w-full h-full object-cover rounded-lg"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-start p-6 text-white"
+              >
+                <h2 class="text-2xl font-bold">Employment Drives</h2>
+                <p class="mt-1">
+                  Job fairs and career support for rural youth.
+                </p>
+                <button
+                  class="mt-3 bg-white text-black px-4 py-1 rounded hover:bg-gray-200"
+                >
+                  View More
+                </button>
+              </div>
+            </div>
+            <div
+              class="slide absolute inset-0 transition-opacity duration-1000 opacity-0"
+            >
+              <img
+                src="./img/banner-3.jpg"
+                class="w-full h-full object-cover rounded-lg"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-start p-6 text-white"
+              >
+                <h2 class="text-2xl font-bold">Startup Support</h2>
+                <p class="mt-1">
+                  Resources and mentoring for local entrepreneurs.
+                </p>
+                <button
+                  class="mt-3 bg-white text-black px-4 py-1 rounded hover:bg-gray-200"
+                >
+                  View More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="md:w-[30%] w-full mt-6 md:mt-0">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Latest News</h3>
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+              <h4 class="text-md font-semibold text-blue-600">
+                Skill India Mission Launched
+              </h4>
+              <p class="text-sm text-gray-600">
+                The government has announced a new skill training initiative
+                targeting youth in rural areas...
+              </p>
+            </div>
+            <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+              <h4 class="text-md font-semibold text-blue-600">
+                Udyog Mitra Partners with Tech Giants
+              </h4>
+              <p class="text-sm text-gray-600">
+                Udyog Mitra has signed an MoU with leading tech companies to
+                provide internship support...
+              </p>
+            </div>
+            <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+              <h4 class="text-md font-semibold text-blue-600">
+                Free Career Counselling Camp
+              </h4>
+              <p class="text-sm text-gray-600">
+                Join the 3-day camp conducted in Bhubaneswar offering career
+                guidance to 12th & graduate students...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- hero section end -->
+
+    <!-- Nav section end -->
+
+    <!-- projects section start -->
+
+    <section class="max-w-7xl mx-auto my-10 px-4">
+      <h2 class="text-3xl font-bold text-center mb-10">Our Projects</h2>
+
+    
+      <div class="flex flex-wrap gap-3 justify-center mb-6">
+        <button
+          class="tab-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-black"
+          data-category="startup"
+        >
+          Startup
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-black"
+          data-category="civil"
+        >
+          Civil
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-black"
+          data-category="engg"
+        >
+          Engg
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-black"
+          data-category="fmcg"
+        >
+          FMCG
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-black"
+          data-category="it"
+        >
+          IT
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-black"
+          data-category="social"
+        >
+          Social
+        </button>
+      </div>
+
+      
+      <div id="projectCards" class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+        <!-- Cards will be injected here by JS -->
+         
+      </div>
+
+     
+      <div class="text-center mt-8">
+        <button
+          onclick="window.location.href='#'"
+          class="px-6 py-2 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded shadow hover:opacity-90"
+        >
+          View More
+        </button>
+      </div>
+    </section>
+
+    <!-- projects section end -->
+
+    <!--our Services Section start-->
+    <section id="services" class="max-w-7xl mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
+
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+        <!-- Service 1 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-center mb-4">
+            
+            <img
+              src="./img/icon-1.avif"
+              alt="Recognition Icon"
+              class="w-12 h-12 mx-auto"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Recognition & Branding
+          </h3>
+          <p class="text-gray-600 text-sm text-center">
+            Prominent display of the Member's logo on the Trust’s website,
+            promotional materials, and event signage.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-center mb-4">
+            <img
+              src="./img/icon-2.jpg"
+              alt="Resources Icon"
+              class="w-12 h-12 mx-auto"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Access to Resources/Information
+          </h3>
+          <p class="text-gray-600 text-sm text-center">
+            Access to reports, research, data, or exclusive content generated by
+            the Trust.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-center mb-4">
+            <img
+              src="./img/icon-3.png"
+              alt="Networking Icon"
+              class="w-12 h-12 mx-auto"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Networking Opportunities
+          </h3>
+          <p class="text-gray-600 text-sm text-center">
+            Invitation to exclusive events, workshops, and networking sessions
+            organized by the Trust.
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-center mb-4">
+            <img
+              src="./img/icon-4.webp"
+              alt="Initiatives Icon"
+              class="w-12 h-12 mx-auto"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Participation in Initiatives
+          </h3>
+          <p class="text-gray-600 text-sm text-center">
+            Participate in specific projects, programs, or committees aligned
+            with the Trust’s objectives.
+          </p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-center mb-4">
+            <img
+              src="./img/icon-5.webp"
+              alt="Consulting Icon"
+              class="w-12 h-12 mx-auto"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Consulting/Advisory Services
+          </h3>
+          <p class="text-gray-600 text-sm text-center">
+            If applicable, Trust may provide legal, financial, and business
+            advisory support.
+          </p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-center mb-4">
+            <img
+              src="./img/icon-6.png"
+              alt="CSR Icon"
+              class="w-12 h-12 mx-auto"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Employee Engagement / CSR
+          </h3>
+          <p class="text-gray-600 text-sm text-center">
+            Members’ employees can engage in CSR or volunteer initiatives
+            supported by the Trust.
+          </p>
+        </div>
+
+        <!-- Service 7 -->
+        <!-- <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+              <div class="text-center mb-4">
+                <img src="icons/benefits.png" alt="Privileges Icon" class="w-12 h-12 mx-auto">
+              </div>
+              <h3 class="text-xl font-semibold text-center mb-2">Other Specific Privileges</h3>
+              <p class="text-gray-600 text-sm text-center">
+                Help in government tenders, market integration, and other unique advantages.
+              </p>
+           </div> -->
+      </div>
+
+     
+      <div class="text-center mt-10">
+        <button
+          onclick="window.location.href='#'"
+          class="px-6 py-2 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded shadow hover:opacity-90"
+        >
+          View More
+        </button>
+      </div>
+    </section>
+
+    <!-- Service section end -->
+
+    <!--livelihood Section start-->
+
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold text-center mb-6">Livelihood</h2>
+
+      
+      <div class="flex justify-center mb-6 gap-4">
+        <button
+          id="industryTab"
+          onclick="showSection('industry')"
+          class="px-5 py-2 bg-blue-600 text-white rounded"
+        >
+          INDIVISUAL
+        </button>
+        <button
+          id="shgTab"
+          onclick="showSection('shg')"
+          class="px-5 py-2 bg-gray-200 text-black rounded hover:bg-gray-300"
+        >
+          SHG
+        </button>
+      </div>
+
+      
+      <div
+        id="industrySection"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all"
+      >
+        <!-- Card 1 -->
+        <div class="flex bg-blue-100 rounded-lg shadow p-4">
+          <img
+            src="./img/indivisual-1.jpg"
+            class="w-1/3 rounded-md"
+            alt="Indivisual 1"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">Skill Development & Training</h3>
+            <p class="mb-3">
+              Empowering youth and workers through vocational training programs
+              that enhance employability and technical proficiency across
+              sectors like manufacturing, electronics, and automotive.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex bg-blue-100 rounded-lg shadow p-4">
+          <img
+            src="./img/indivisual-2.jpg"
+            class="w-1/3 rounded-lg"
+            alt="Indivisual 2"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">MSME Support & Innovation</h3>
+            <p class="mb-3">
+              Encouraging Micro, Small, and Medium Enterprises with
+              infrastructure, funding assistance, and digitalization to boost
+              production, competitiveness, and job creation.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex bg-blue-100 rounded-lg shadow p-4">
+          <img
+            src="./img/indivisual-3.jpg"
+            class="w-1/3 rounded-lg"
+            alt="indivisual-3"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">Industrial Cluster Promotion</h3>
+            <p class="mb-3">
+              Creating well-equipped industrial clusters to support startups and
+              medium-scale industries, improve logistics, and enhance
+              collaboration within supply chains.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex bg-blue-100 rounded-lg shadow p-4">
+          <img
+            src="./img/indivisual-4.jpg"
+            class="w-1/3 rounded-lg"
+            alt="indivisual-4"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">Green & Sustainable Manufacturing</h3>
+            <p class="mb-3">
+              Promoting eco-friendly production techniques, energy-efficient
+              machinery, and sustainable waste management practices for a
+              greener industrial future.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+        
+      </div>
+
+      <div
+        id="shgSection"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all hidden"
+      >
+        <!-- Card 1 -->
+        <div class="flex bg-pink-100 rounded-lg shadow p-4">
+          <img
+            src="./img/shg-1.jpg"
+            class="w-1/3 rounded-lg"
+            alt="SHG 1"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">Women Empowerment Initiatives</h3>
+            <p class="mb-3">
+              Supporting women-led SHGs by providing micro-loans,
+              entrepreneurial training, and marketing platforms to foster
+              financial independence and community leadership.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex bg-pink-100 rounded-lg shadow p-4">
+          <img
+            src="./img/shg-2.jpg"
+            class="w-1/3 rounded-lg"
+            alt="SHG 2"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">
+              Handicrafts & Cottage Industry Promotion
+            </h3>
+            <p class="mb-3">
+              Preserving local art and crafts by helping SHGs produce and sell
+              handmade goods, while connecting them to e-commerce platforms for
+              better market access.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex bg-pink-100 rounded-lg shadow p-4">
+          <img
+            src="./img/shg-3.jpg"
+            class="w-1/3 rounded-lg"
+            alt="SHG 3"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">Agro-based SHG Enterprises</h3>
+            <p class="mb-3">
+              Encouraging farming-related groups to produce organic food items,
+              dairy, and value-added products, enhancing rural livelihoods and
+              food security.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex bg-pink-100 rounded-lg shadow p-4">
+          <img
+            src="./img/shg-4.jpg"
+            class="w-1/3 rounded-lg"
+            alt="SHG 4"
+          />
+          <div class="pl-4 w-2/3">
+            <h3 class="text-xl font-bold">Digital & Financial Literacy</h3>
+            <p class="mb-3">
+              Equipping SHG members with digital tools, mobile banking access,
+              and training to manage their finances, access government schemes,
+              and grow sustainably.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <button class="w-1/2 bg-green-600 text-white px-4 py-2 rounded">
+                Contribute
+              </button>
+              <button class="w-1/2 bg-pink-600 text-white px-4 py-2 rounded">
+                Invest
+              </button>
+            </div>
+            <button
+              onclick="window.location.href='#'"
+              class="bg-yellow-500 text-white w-full px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+       
+      </div>
+    </section>
+
+    <!--livelihood Section end-->
+
+    <!--Education Section start-->
+    <section class="bg-gray-100">
+      <section class="text-center py-8">
+        <h2 class="text-3xl font-bold mb-4">Education Services</h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto"
+        >
+          <!-- CARD 1 -->
+          <div class="hover-card rounded-lg shadow p-6">
+            <div class="mb-4 flex justify-center">
+              <img
+                src="./img/icon-7.png"
+                class="h-12 w-12"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black mb-2">
+              Primary Education
+            </h3>
+            <p class="text-sm text-gray-800 mb-4">
+              Supporting foundational learning programs in rural villages and
+              tribal regions...
+            </p>
+            <div class="flex gap-2 justify-center">
+              <a
+                href="#"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded "
+                >Read More</a
+              >
+              <button
+                onclick="openModal('modal1')"
+                class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded "
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="hover-card rounded-lg shadow p-6">
+            <div class="mb-4 flex justify-center">
+              <img
+                src="./img/icon-7.png"
+                class="h-12 w-12"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black mb-2">
+              Digital Literacy
+            </h3>
+            <p class="text-sm text-gray-800 mb-4">
+              Equipping students and teachers with essential digital tools and
+              training programs...
+            </p>
+            <div class="flex gap-2 justify-center">
+              <a
+                href="#"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded "
+                >Read More</a
+              >
+              <button
+                onclick="openModal('modal2')"
+                class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded "
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="hover-card rounded-lg shadow p-6">
+            <div class="mb-4 flex justify-center">
+              <img
+                src="./img/icon-7.png"
+                class="h-12 w-12"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black mb-2">
+              Scholarship Support
+            </h3>
+            <p class="text-sm text-gray-800 mb-4">
+              Providing financial aid and mentorship to deserving students for
+              higher studies...
+            </p>
+            <div class="flex gap-2 justify-center">
+              <a
+                href="#"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded "
+                >Read More</a
+              >
+              <button
+                onclick="openModal('modal3')"
+                class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded "
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="hover-card rounded-lg shadow p-6">
+            <div class="mb-4 flex justify-center">
+              <img
+                src="./img/icon-7.png"
+                class="h-12 w-12"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black mb-2">
+              Scholarship Support
+            </h3>
+            <p class="text-sm text-gray-800 mb-4">
+              Providing financial aid and mentorship to deserving students for
+              higher studies...
+            </p>
+            <div class="flex gap-2 justify-center">
+              <a
+                href="#"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded "
+                >Read More</a
+              >
+              <button
+                onclick="openModal('modal4')"
+                class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded "
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 5 -->
+          <div class="hover-card rounded-lg shadow p-6">
+            <div class="mb-4 flex justify-center">
+              <img
+                src="./img/icon-7.png"
+                class="h-12 w-12"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black mb-2">
+              Scholarship Support
+            </h3>
+            <p class="text-sm text-gray-800 mb-4">
+              Providing financial aid and mentorship to deserving students for
+              higher studies...
+            </p>
+            <div class="flex gap-2 justify-center">
+              <a
+                href="#"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded "
+                >Read More</a
+              >
+              <button
+                onclick="openModal('modal5')"
+                class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded "
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 6 -->
+          <div class="hover-card rounded-lg shadow p-6">
+            <div class="mb-4 flex justify-center">
+              <img
+                src="./img/icon-7.png"
+                class="h-12 w-12"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black mb-2">
+              Scholarship Support
+            </h3>
+            <p class="text-sm text-gray-800 mb-4">
+              Providing financial aid and mentorship to deserving students for
+              higher studies...
+            </p>
+            <div class="flex gap-2 justify-center">
+              <a
+                href="#"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded "
+                >Read More</a
+              >
+              <button
+                onclick="openModal('modal6')"
+                class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded "
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODAL 1 -->
+      <div
+        id="modal1"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="relative">
+            <img
+              src="./img/modal1.jpg"
+              class="w-full h-56 object-cover"
+            />
+            <button
+              onclick="closeModal('modal1')"
+              class="absolute top-2 right-2 bg-white rounded-full p-1 text-black hover:text-red-600 text-xl font-bold"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Primary Education</h3>
+            <p class="text-sm text-gray-700">
+              Vikash provides primary education in underprivileged tribal and
+              rural areas, aiming to reduce dropout rates and encourage
+              continuous learning through community-based schools. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Nulla doloremque,
+              eveniet magnam a quibusdam eaque quis recusandae laborum quae
+              officia iste dignissimos ea quisquam nemo, unde aut assumenda
+              saepe similique provident corrupti minima cum laboriosam deserunt!
+              Nulla porro mollitia dolorem. Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. Adipisci sapiente autem voluptas
+              deserunt facere dolore culpa illum amet, nobis, perferendis,
+              doloribus sit. Suscipit quo veritatis ad provident culpa minima
+              maxime!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 2 -->
+      <div
+        id="modal2"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="relative">
+            <img
+              src="./img/modal2.jpg"
+              class="w-full h-56 object-cover"
+            />
+            <button
+              onclick="closeModal('modal2')"
+              class="absolute top-2 right-2 bg-white rounded-full p-1 text-black hover:text-red-600 text-xl font-bold"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Digital Literacy</h3>
+            <p class="text-sm text-gray-700">
+              Through community computer centers and mobile classrooms, Vikash
+              empowers teachers and youth with basic digital skills to bridge
+              the digital divide. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Autem inventore quam, numquam, aspernatur
+              blanditiis, vel beatae illo incidunt eius repudiandae eum
+              explicabo nihil quos ipsam quaerat mollitia distinctio omnis est
+              ex fugiat consequuntur magni ullam aliquid! Amet quae consectetur
+              voluptatum quibusdam aut illo animi in, at nisi quas? Soluta
+              excepturi ipsum ratione laudantium hic aliquid in dolorem nobis
+              quia totam magnam sequi vel ea magni nihil cumque id ipsa officiis
+              sit eum, nam blanditiis deleniti voluptate. Repellendus
+              voluptatibus dolor dolore cumque? Tempore ut quam vel doloremque
+              laborum veniam. Ad, totam? Quae, quam! Labore numquam in
+              voluptates facere odio, aut sint.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 3 -->
+      <div
+        id="modal3"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="relative">
+            <img
+              src="./img/modal3.jpg"
+              class="w-full h-56 object-cover"
+            />
+            <button
+              onclick="closeModal('modal3')"
+              class="absolute top-2 right-2 bg-white rounded-full p-1 text-black hover:text-red-600 text-xl font-bold"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Scholarship Support</h3>
+            <p class="text-sm text-gray-700">
+              Vikash offers scholarships and mentoring programs to academically
+              talented yet economically challenged students to pursue higher
+              education and skill development. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Odio in animi error aperiam deleniti
+              quam earum! Incidunt iure quas odio a distinctio libero esse,
+              expedita maiores molestias odit, minima quam corrupti officia
+              illum porro consectetur nihil maxime quod voluptate pariatur ea
+              quia veniam minus enim. Dolorum at velit eveniet facere saepe
+              maiores eos, accusantium, perspiciatis quaerat temporibus quasi
+              libero quas quibusdam? Eveniet adipisci, sapiente beatae,
+              consectetur est labore eius tempora voluptates delectus at ullam
+              quaerat explicabo vitae fugiat aut quia? Repudiandae labore, illo
+              mollitia veritatis odio laborum omnis rem eveniet voluptatibus
+              ducimus facilis voluptates necessitatibus ratione atque molestiae
+              accusamus sint.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 4 -->
+      <div
+        id="modal4"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="relative">
+            <img
+              src="./img/modal4.jpg"
+              class="w-full h-56 object-cover"
+            />
+            <button
+              onclick="closeModal('modal4')"
+              class="absolute top-2 right-2 bg-white rounded-full p-1 text-black hover:text-red-600 text-xl font-bold"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Digital Literacy</h3>
+            <p class="text-sm text-gray-700">
+              Through community computer centers and mobile classrooms, Vikash
+              empowers teachers and youth with basic digital skills to bridge
+              the digital divide. Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Porro dicta quas iste reiciendis harum sapiente
+              voluptatum atque maxime! Eaque, suscipit corporis optio nisi aut
+              sint at, voluptas impedit deserunt cum dicta, ratione illo eius
+              laudantium accusantium totam veniam! Corrupti eos officiis
+              expedita inventore repellendus doloribus beatae id dolore commodi,
+              libero nobis neque totam ipsam ratione cumque? Ex tempora
+              quibusdam maiores perspiciatis aliquam iste tenetur libero totam
+              amet necessitatibus at sed suscipit, eum, similique voluptas?
+              Obcaecati aspernatur impedit amet laboriosam ullam doloribus
+              provident, aut, nihil et dolores quisquam! Animi odit aut minus
+              quisquam excepturi. Quas debitis, id ipsam ipsum et mollitia?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 5 -->
+      <div
+        id="modal5"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="relative">
+            <img
+              src="./img/modal5.jpg"
+              class="w-full h-56 object-cover"
+            />
+            <button
+              onclick="closeModal('modal5')"
+              class="absolute top-2 right-2 bg-white rounded-full p-1 text-black hover:text-red-600 text-xl font-bold"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Digital Literacy</h3>
+            <p class="text-sm text-gray-700">
+              Through community computer centers and mobile classrooms, Vikash
+              empowers teachers and youth with basic digital skills to bridge
+              the digital divide. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Iste aliquam quis nobis dolores. Suscipit, cum,
+              optio doloribus velit, impedit provident aliquid quo maxime
+              laudantium ducimus eveniet aspernatur reprehenderit magni ab
+              accusamus? Deleniti recusandae distinctio id, itaque cum quisquam
+              libero sint rerum accusamus impedit nemo quia molestiae minus
+              provident atque eligendi beatae hic inventore laboriosam, fuga
+              temporibus? Itaque, commodi voluptates praesentium possimus quidem
+              suscipit sequi rerum nulla adipisci optio at beatae? Excepturi rem
+              totam ad mollitia minima quasi animi, eaque non voluptas
+              cupiditate voluptatem labore dolorem necessitatibus aspernatur
+              magnam nobis earum quos veniam, vero dolore aliquam. Iure
+              voluptate alias magni corporis!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 6 -->
+      <div
+        id="modal6"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+      >
+        <div
+          class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="relative">
+            <img
+              src="./img/modal6.jpg"
+              class="w-full h-56 object-cover"
+            />
+            <button
+              onclick="closeModal('modal6')"
+              class="absolute top-2 right-2 bg-white rounded-full p-1 text-black hover:text-red-600 text-xl font-bold"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Digital Literacy</h3>
+            <p class="text-sm text-gray-700">
+              Through community computer centers and mobile classrooms, Vikash
+              empowers teachers and youth with basic digital skills to bridge
+              the digital divide. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Dolore totam quis minima accusamus fuga fugiat
+              veniam temporibus porro adipisci mollitia, aliquid eveniet libero
+              voluptas aperiam quam laboriosam consequuntur laborum, maiores
+              dolor eos dolorem ipsum officiis. At cupiditate odio eaque id sed.
+              Rerum cupiditate recusandae placeat delectus qui reprehenderit
+              eaque natus dicta consequatur culpa dignissimos sint, corrupti
+              velit iure exercitationem non cum quidem esse numquam, enim
+              soluta. Autem commodi nulla quisquam harum doloribus aperiam culpa
+              necessitatibus suscipit iusto rem eveniet velit, ipsam sapiente
+              adipisci excepturi vero maiores similique iure et molestias magnam
+              fuga est corrupti quam. Repudiandae dolores fuga sed excepturi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Education Section End-->
+
+    <!-- Testimonial section start -->
+
+     <section class="py-12 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-600">What People Say</h2>
+
+    <div class="relative max-w-3xl mx-auto overflow-hidden">
+      
+      <div id="testimonialSlider" class="flex transition-all duration-700 ease-in-out">
+        
+        <!-- Testimonial 1 -->
+        <div class="min-w-full p-6 bg-blue-50 rounded-lg shadow-md text-center">
+          <img src="./img/testi1.jpg" alt="Rina Sahu" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-white shadow">
+          <p class="text-gray-700 italic mb-4">"Thanks to Udyogimitra’s skill training program, I not only learned tailoring but also started earning from home."</p>
+          <div class="text-yellow-500 mb-2">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <h4 class="font-bold text-blue-700">Rina Sahu, 22</h4>
+          <p class="text-sm text-gray-500">Self-employed Tailor, Koraput</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="min-w-full p-6 bg-green-50 rounded-lg shadow-md text-center">
+          <img src="./img/testi2.jpg" alt="Sushila Nayak" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-white shadow">
+          <p class="text-gray-700 italic mb-4">"Being part of a Self Help Group under Udyogimitra gave me the confidence to start my own micro business."</p>
+          <div class="text-yellow-500 mb-2">
+            ⭐⭐⭐⭐☆
+          </div>
+          <h4 class="font-bold text-green-700">Sushila Nayak</h4>
+          <p class="text-sm text-gray-500">SHG Member, Kandhamal</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="min-w-full p-6 bg-yellow-50 rounded-lg shadow-md text-center">
+          <img src="./img/testi3.jpg" alt="Deepak Meher" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-white shadow">
+          <p class="text-gray-700 italic mb-4">"Udyogimitra helped me with a scholarship. Today I’m studying engineering — something I never thought possible."</p>
+          <div class="text-yellow-500 mb-2">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <h4 class="font-bold text-yellow-700">Deepak Meher, 19</h4>
+          <p class="text-sm text-gray-500">Student, Bhawanipatna</p>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="min-w-full p-6 bg-pink-50 rounded-lg shadow-md text-center">
+          <img src="./img/testi4.jpg" alt="Chandrakant Patra" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-white shadow">
+          <p class="text-gray-700 italic mb-4">"After attending Udyogimitra’s agro-marketing workshops, I learned how to reach buyers directly. My income has doubled."</p>
+          <div class="text-yellow-500 mb-2">
+            ⭐⭐⭐⭐☆
+          </div>
+          <h4 class="font-bold text-pink-700">Chandrakant Patra</h4>
+          <p class="text-sm text-gray-500">Small Farmer, Ganjam</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonial section end -->
+
+    <!-- Carrier section start -->
+     <section class="bg-gray-300">
+        
+      <div class="max-w-7xl mx-auto mt-6 p-4">
+        <h2 class="text-3xl font-bold text-center mb-6">Jobs</h2>
+    <div class="flex h-screen overflow-hidden">
+      
+      <div class="w-1/3 overflow-y-auto bg-white border-r p-4 space-y-4">
+        <div class="cursor-pointer p-4 border rounded job-item bg-green-100" onclick="showJob(0)">
+          <h3 class="font-semibold">TechNova Solutions</h3>
+          <p class="text-sm">Frontend Developer Intern</p>
+          <p class="text-xs text-gray-600">Bengaluru, India</p>
+        </div>
+        <div class="cursor-pointer p-4 border rounded job-item" onclick="showJob(1)">
+          <h3 class="font-semibold">CodeVerse Technologies</h3>
+          <p class="text-sm">Full Stack Developer</p>
+          <p class="text-xs text-gray-600">Remote / Pune, India</p>
+        </div>
+        <div class="cursor-pointer p-4 border rounded job-item" onclick="showJob(2)">
+          <h3 class="font-semibold"> PixelCraft Innovations</h3>
+          <p class="text-sm">UI/UX Designer</p>
+          <p class="text-xs text-gray-600">Mumbai, India</p>
+        </div>
+         <div class="cursor-pointer p-4 border rounded job-item bg-green-100" onclick="showJob(0)">
+          <h3 class="font-semibold">DevStack Softwares</h3>
+          <p class="text-sm">Backend Developer (Node.js)</p>
+          <p class="text-xs text-gray-600">Hyderabad, India</p>
+        </div>
+        <div class="cursor-pointer p-4 border rounded job-item" onclick="showJob(1)">
+          <h3 class="font-semibold">Silan Software Pvt. Ltd.</h3>
+          <p class="text-sm">Web Development Intern</p>
+          <p class="text-xs text-gray-600">Bhubaneshwar,India</p>
+        </div>
+        <div class="cursor-pointer p-4 border rounded job-item" onclick="showJob(2)">
+          <h3 class="font-semibold">NexaByte Systems</h3>
+          <p class="text-sm">Data Analyst</p>
+          <p class="text-xs text-gray-600">Gurugram, India</p>
+        </div>
+         <div class="cursor-pointer p-4 border rounded job-item bg-green-100" onclick="showJob(0)">
+          <h3 class="font-semibold"> Deloitte India</h3>
+          <p class="text-sm"> Business Analyst</p>
+          <p class="text-xs text-gray-600">Bhubaneshwar</p>
+        </div>
+        <div class="cursor-pointer p-4 border rounded job-item" onclick="showJob(1)">
+          <h3 class="font-semibold">Wipro Limited</h3>
+          <p class="text-sm">web Developer</p>
+          <p class="text-xs text-gray-600">Bhubaneshwar</p>
+        </div>
+        <div class="cursor-pointer p-4 border rounded job-item" onclick="showJob(2)">
+          <h3 class="font-semibold">ZebaQ Pvt Ltd</h3>
+          <p class="text-sm">Web Developer Intern</p>
+          <p class="text-xs text-gray-600">India</p>
+        </div>
+      </div>
+      
+
+      
+      <div class="w-2/3 p-6 overflow-y-auto bg-white relative" id="jobDetails">
+       
+      </div>
+    </div>
+  </div>
+     </section>
+
+     <!-- carrier section end -->
+
+     <!-- faq section start -->
+      <section class="bg-gray-100 py-10 px-4">
+        <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+
+    
+    <div id="faq" class="space-y-4">
+
+      <!-- FAQ Item 1 -->
+      <div class="bg-white shadow-md rounded-lg">
+        <button class="w-full px-6 py-4 text-left flex justify-between items-center text-lg font-medium faq-toggle">
+          What is the application process for a job?
+          <span class="text-xl">+</span>
+        </button>
+        <div class="faq-content px-6 pb-4 text-gray-700 hidden">
+          After selecting a job posting, click on the "Apply" button and complete the form on the redirected page. Our recruitment team will review your application and contact you if shortlisted.
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="bg-white shadow-md rounded-lg">
+        <button class="w-full px-6 py-4 text-left flex justify-between items-center text-lg font-medium faq-toggle">
+          Can I apply for multiple job roles at once?
+          <span class="text-xl">+</span>
+        </button>
+        <div class="faq-content px-6 pb-4 text-gray-700 hidden">
+          Yes, you can apply for more than one position. However, we recommend applying only to those roles that best fit your skills and interests.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="bg-white shadow-md rounded-lg">
+        <button class="w-full px-6 py-4 text-left flex justify-between items-center text-lg font-medium faq-toggle">
+          What documents are required during application?
+          <span class="text-xl">+</span>
+        </button>
+        <div class="faq-content px-6 pb-4 text-gray-700 hidden">
+          You’ll need to upload your updated resume. If shortlisted, we may also request a government ID proof, educational certificates, and past employment records.
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="bg-white shadow-md rounded-lg">
+        <button class="w-full px-6 py-4 text-left flex justify-between items-center text-lg font-medium faq-toggle">
+          When can I expect to hear back after applying?
+          <span class="text-xl">+</span>
+        </button>
+        <div class="faq-content px-6 pb-4 text-gray-700 hidden">
+          Typically, our team responds within 7–10 working days. If you are shortlisted, you’ll receive an email or a phone call for the next steps.
+        </div>
+      </div>
+
+    </div>
+  </div>
+      </section>
+      <!-- faq section end -->
+
+      <!-- Get In Touch Section -->
+
+     <section class="contact" id="contact">
+      <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10 " >
+      <span class="inline-block border-t-4 border-blue-800 w-8 mb-1 mr-1" ></span>
+      Get In Touch
+      <span class="inline-block border-b-4 border-blue-800 w-8 ml-1 mt-1"></span>
+    </h2>
+
+    <div class="bg-white shadow-lg rounded-2xl p-2 flex flex-col md:flex-row gap-4 items-stretch">
+      
+      <div class="w-full md:w-1/2 rounded-xl overflow-hidden">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.224249064792!2d85.83378857469434!3d20.258642413784347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7b989079453%3A0x37917ab104d2f0a2!2sBanzera%20solutions%20private%20limited!5e1!3m2!1sen!2sin!4v1750319665122!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      
+      <div class="w-full md:w-1/2 p-6">
+        <form class="space-y-4">
+          <input type="text" placeholder="Name *" class="w-full border border-gray-300 rounded-full px-5 py-2 focus:outline-none required">
+          <input type="num" placeholder="Contact Number*" class="w-full border border-gray-300 rounded-full px-5 py-2 focus:outline-none required">
+          <input type="email" placeholder="Email *" class="w-full border border-gray-300 rounded-full px-5 py-2 focus:outline-none required">
+          <textarea placeholder="Your Message" rows="4" class="w-full border border-gray-300 rounded-xl px-5 py-3 focus:outline-none required"></textarea>
+
+          <button type="submit"
+            class="mt-2 bg-white text-blue-900 border-2 border-blue-900 hover:bg-blue-900 hover:text-white rounded-full px-8 py-2 transition duration-300">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+     </section>
+
+     <!-- footer section -->
+           
+     <footer class="mt-10 bg-gradient-to-r from-pink-400 to-blue-400 text-black border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
+    
+   
+    <div>
+        <img
+            src="img/img-2.png"alt="Udyogimitra Logo"class="h-20 w-auto rounded-full bg-black"/>
+      <p class="text-sm leading-relaxed text-black font-medium">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nulla quae veniam blanditiis facilis beatae sint consequatur nobis perferendis! Perspiciatis officiis dolores saepe numquam ipsum, sit modi tenetur ut quisquam asperiores accusamus cum fuga in quas, eligendi iste, veritatis assumenda?
+      </p>
+    </div>
+
+    
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Company</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="About.html" class="hover:text-blue-600">Who We Are</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Our Services</a> </li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact Us</a></li>
+      </ul>
+    </div>
+
+    
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Services</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="Services.html" class="hover:text-blue-600">Services 1</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 2</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 3</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 4</a></li>
+      </ul>
+    </div>
+
+    
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Customer</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="Project.html" class="hover:text-blue-600">Client Support</a></li>
+        <li><a href="Project.html" class="hover:text-blue-600">Help Center</a></li>
+        <li><a href="Project.html" class="hover:text-blue-600">System Status</a></li>
+        <li><a href="Project.html" class="hover:text-blue-600">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="border-t border-gray-200 text-center text-sm text-black py-4 px-4 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+    <p>&copy; 2025 UDYOGIMITRA Is Proudly Powered By <a href="Index.html" class="text-blue-600">UDYOGIMITRA</a></p>
+    <div class="space-x-4 mt-2 md:mt-0">
+      <a href="Privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="T&C.html" class="hover:underline">Terms And Conditions</a>
+      <a href="Copy.html" class="hover:underline">Copyright</a>
+    </div>
+  </div>
+     </footer>
+       <!-- footer section end -->
+
+    <!-- Script -->
+    
+
+
+
+
+    <!-- Nav Script -->
+   <script>
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeMenu = document.getElementById("close-menu");
+  const searchBtn = document.getElementById("mobile-search-btn");
+  const searchBox = document.getElementById("mobile-search-box");
+
+ 
+  hamburgerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  closeMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.add("hidden");
+    searchBox.classList.add("hidden");
+  });
+
+ 
+  searchBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    searchBox.classList.toggle("hidden");
+
+    const input = document.getElementById("mobile-search");
+    if (!searchBox.classList.contains("hidden")) {
+      setTimeout(() => input.focus(), 100);
+    }
+  });
+
+
+  searchBox.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.classList.contains("hidden")) {
+      mobileMenu.classList.add("hidden");
+      searchBox.classList.add("hidden");
+    }
+  });
+
+  
+  function clearSearch(inputId) {
+    const input = document.getElementById(inputId);
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+  }
+   </script>
+ 
+      <!-- Join us script -->
+       <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const openBtn = document.getElementById('openJoinForm');
+  const modal = document.getElementById('joinFormModal');
+  const closeBtn = document.getElementById('closeJoinForm');
+
+  if (openBtn && modal && closeBtn) {
+    openBtn.addEventListener('click', function () {
+      modal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', function () {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+});
+       </script>
+
+    <!-- Hero script -->
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("opacity-100");
+          slide.classList.add("opacity-0");
+          if (i === index) {
+            slide.classList.add("opacity-100");
+            slide.classList.remove("opacity-0");
+          }
+        });
+      }
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }, 4000); 
+    </script>
+
+    <!-- Project script -->
+    <script>
+      const data = {
+        startup: [
+          {
+            image:
+              "./img/startup-1.jpeg",
+            title: "Support Women Startup Founders",
+            raised: "₹5,20,000",
+            desc: "Helping women-led ventures grow in rural India.",
+          },
+          {
+            image:
+              "./img/startup-5.jpeg",
+            title: "Empowering Local Handmade Brands",
+            raised: "₹3,10,500",
+            desc: "Uplifting handmade craft business across states.",
+          },
+          {
+            image:
+              "./img/startup-3.jpeg",
+            title: "Organic Food Startup Support",
+            raised: "₹8,90,600",
+            desc: "Assisting organic farming-based startups.",
+          },
+        ],
+        civil: [
+          {
+            image:
+              "./img/civil-3.jpeg",
+            title: "Village Road Improvement Project",
+            raised: "₹2,75,000",
+            desc: "Improving rural connectivity by building all-weather roads.",
+          },
+          {
+            image:
+              "./img/civil-4.jpeg",
+            title: "Safe Sanitation Drive",
+            raised: "₹4,60,000",
+            desc: "Establishing eco-friendly toilets in underdeveloped areas.",
+          },
+          {
+            image:
+              "./img/civil-1.jpeg",
+            title: "Rural Water Pipeline Installation",
+            raised: "₹6,20,000",
+            desc: "Providing clean drinking water through sustainable piping systems.",
+          },
+        ],
+        engg: [
+          {
+            image:
+              "./img/engg-1.jpeg",
+            title: "Skill Hub for Mechanical Engineers",
+            raised: "₹3,80,000",
+            desc: "Upskilling unemployed engineering graduates with hands-on training.",
+          },
+          {
+            image:
+              "./img/engg-3.jpeg",
+            title: "Smart Irrigation Tech Development",
+            raised: "₹5,10,000",
+            desc: "Innovating low-cost IoT irrigation systems for small farmers.",
+          },
+          {
+            image:
+              "./img/engg-2.jpeg",
+            title: "Solar Energy Workshop",
+            raised: "₹4,90,000",
+            desc: "Creating employment by training youth in solar panel installation.",
+          },
+        ],
+        fmcg: [
+          {
+            image:
+              "./img/fmcg-2.jpeg",
+            title: "Rural Women Papad Manufacturing Unit",
+            raised: "₹2,30,000",
+            desc: "Empowering women through cottage-based food production.",
+          },
+          {
+            image:
+              "./img/fmcg-1.jpeg",
+            title: "Natural Spice Packaging Initiative",
+            raised: "₹3,75,000",
+            desc: "Promoting local spice farmers by creating FMCG spice packs.",
+          },
+          {
+            image:
+              "./img/fmcg-3.jpeg",
+            title: "Organic Snack Brand for Villages",
+            raised: "₹6,50,000",
+            desc: "Launching branded healthy snacks made by rural self-help groups.",
+          },
+        ],
+        it: [
+          {
+            image:
+              "./img/it-1.jpeg",
+            title: "Rural IT Skill Training Centre",
+            raised: "₹5,20,000",
+            desc: "Teaching basic coding, web development, and computer literacy.",
+          },
+          {
+            image: "./img/it-2.jpeg",
+            title: "Digital India Awareness Camps",
+            raised: "₹2,80,000",
+            desc: "Helping villagers use online services like banking, UPI, and Aadhaar.",
+          },
+          {
+            image:
+              "./img/it-3.jpeg",
+            title: "Startup Support App for SHGs",
+            raised: "₹4,70,000",
+            desc: "Developing a mobile app to help rural women manage businesses.",
+          },
+        ],
+        social: [
+          {
+            image:
+              "./img/social-2.jpg",
+            title: "Education for Every Child Drive",
+            raised: "₹7,00,000",
+            desc: "Funding school supplies and tutors for children in rural areas.",
+          },
+          {
+            image:
+              "./img/social-3.jpg",
+            title: "Healthcare on Wheels",
+            raised: "₹9,10,000",
+            desc: "Providing mobile health clinics in underserved regions.",
+          },
+          {
+            image:
+              "./img/social-4.jpg",
+            title: "Widow and Senior Citizen Support Group",
+            raised: "₹4,40,000",
+            desc: "Offering livelihood training and emotional support to neglected groups.",
+          },
+        ],
+      };
+
+      function showTab(category) {
+        const container = document.getElementById("projectCards");
+        const cards = data[category] || [];
+
+      
+        container.innerHTML = cards
+          .map(
+            (card) => `
+      <div class="bg-white rounded shadow p-4 hover:shadow-lg transition">
+        <img src="${card.image}" alt="${card.title}" class="rounded w-full h-40 object-cover mb-3" />
+        <h4 class="text-lg font-semibold text-gray-800">${card.title}</h4>
+        <p class="text-sm text-gray-600 mt-1">${card.desc}</p>
+        <div class="w-full bg-gray-200 rounded-full h-3 mt-3 mb-3">
+          <div class="bg-green-500 h-3 rounded-full" style="width: 25%;"></div>
+        </div>
+        <div class="mt-3 text-sm font-medium text-green-600">Raised: ${card.raised}</div>
+        <div class="flex gap-2 mt-4">
+          <button class="flex-1 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">Contribute</button>
+          <button class="flex-1 px-3 py-1 bg-pink-500 text-white rounded hover:bg-pink-600 text-sm">Invest</button>
+        </div>
+      </div>
+    `
+          )
+          .join("");
+
+       
+        const buttons = document.querySelectorAll(".tab-btn");
+        buttons.forEach((btn) => {
+          btn.classList.remove(
+            "bg-blue-700",
+            "text-white",
+            "hover:bg-blue-700"
+          );
+          btn.classList.add("bg-gray-200", "text-black", "hover:bg-gray-300");
+        });
+
+        const activeBtn = document.querySelector(
+          `.tab-btn[data-category="${category}"]`
+        );
+        if (activeBtn) {
+          activeBtn.classList.remove(
+            "bg-gray-200",
+            "text-black",
+            "hover:bg-gray-300"
+          );
+          activeBtn.classList.add(
+            "bg-blue-700",
+            "text-white",
+            "hover:bg-blue-700"
+          );
+        }
+      }
+
+    
+      window.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".tab-btn");
+
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const category = btn.getAttribute("data-category");
+            showTab(category);
+          });
+        });
+
+      
+        showTab("startup");
+      });
+    </script>
+
+    <!-- Livelihood script -->
+    <script>
+      function showSection(tab) {
+        const industryTab = document.getElementById("industryTab");
+        const shgTab = document.getElementById("shgTab");
+        const industrySection = document.getElementById("industrySection");
+        const shgSection = document.getElementById("shgSection");
+
+        if (tab === "industry") {
+          industrySection.classList.remove("hidden");
+          shgSection.classList.add("hidden");
+
+          industryTab.classList.add("bg-blue-600", "text-white");
+          industryTab.classList.remove("bg-gray-200", "text-black");
+          shgTab.classList.remove("bg-blue-600", "text-white");
+          shgTab.classList.add("bg-gray-200", "text-black");
+        } else {
+          shgSection.classList.remove("hidden");
+          industrySection.classList.add("hidden");
+
+          shgTab.classList.add("bg-blue-600", "text-white");
+          shgTab.classList.remove("bg-gray-200", "text-black");
+          industryTab.classList.remove("bg-blue-600", "text-white");
+          industryTab.classList.add("bg-gray-200", "text-black");
+        }
+      }
+
+     
+      window.onload = () => showSection("industry");
+    </script>
+
+    <!-- Modal Script -->
+    <script>
+      function openModal(id) {
+        document.getElementById(id).classList.remove("hidden");
+        document.getElementById(id).classList.add("flex");
+      }
+
+      function closeModal(id) {
+        document.getElementById(id).classList.remove("flex");
+        document.getElementById(id).classList.add("hidden");
+      }
+    </script>
+
+<!-- Tesimonial script -->
+  <script>
+    const slider = document.getElementById("testimonialSlider");
+    let CurrentIndex = 0;
+
+    setInterval(() => {
+      CurrentIndex = (CurrentIndex + 1) % 4; 
+      slider.style.transform = `translateX(-${CurrentIndex * 100}%)`;
+    }, 4000); 
+  </script>
+
+<!-- carrier script -->
+ <script>
+    const jobs = [
+      {
+        company: "TechNova Solutions",
+        title: "Frontend Developer Intern",
+        location: "Bengaluru, India",
+        description: `
+          <p><b>Experience: </b> 0-1 years</p>
+          <p><b>Employment Type: </b> Internship (Full Time)</p>
+          <h4 class='font-bold text-2xl mt-4'>Company Overview:</h4>
+          <p>TechNova is a fast-growing startup focused on SaaS solutions for EdTech and Healthcare. With a dynamic work culture, we value learning, creativity, and growth.</p>
+
+          <h4 class='font-bold text-2xl mt-4'>Job Description:</h4>
+          <p>We are seeking a frontend developer intern to help design and develop web applications. This position requires strong fundamentals in HTML, CSS, and JavaScript with exposure to ReactJS.</p>
+
+            <h4 class='font-bold mt-4'>Roles and Responsibilities:</h4>
+          <ul class='list-disc list-inside'>
+            <li>Convert UI/UX wireframes to responsive web pages.</li>
+            <li>Collaborate with the backend team to integrate APIs.</li>
+            <li>Debug and optimize existing UI code.</li>
+          </ul>
+
+          <p class="mt-2"><b>Skills Required: </b> HTML5, CSS3, JavaScript, ReactJS, Git</p>
+          <p class="mt-2"><b>Salary: </b> ₹7,000/month stipend</p>
+
+  <!-- Ratings Section -->
+<div>
+  <h2 class="text-2xl font-semibold mt-4 mb-4">TechNova Solutions Ratings</h2>
+
+  <!-- Flex layout for main content -->
+  <div class="flex flex-col md:flex-row md:justify-between gap-6">
+
+    <!-- Left Side: Stars + Circles -->
+    <div class="flex-1">
+      <!-- Star Rating Summary -->
+      <div class="flex items-center mb-4 space-x-2">
+        <span class="text-green-600 text-xl font-bold">5.0</span>
+        <div class="flex space-x-1">
+          <!-- 5 filled stars -->
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+        </div>
+      </div>
+
+      
+    <!-- Right Side: Breakdown Ratings -->
+    <div class="flex-1 space-y-3">
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Career opportunities</span>
+        <span class="text-yellow-500 font-semibold">★★★★★ 5.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Comp and Benefits</span>
+        <span class="text-yellow-500 font-semibold">★★★★★ 5.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Culture and values</span>
+        <span class="text-yellow-500 font-semibold">★★★★★ 5.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Senior management</span>
+        <span class="text-yellow-500 font-semibold">★★★★★ 5.0</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+ `
+      },
+       {
+        company: "CodeVerse Technologies",
+        title: "Full Stack Developer",
+        location: " Remote / Pune, India",
+        description: `
+          <p><b>Experience: </b> 1-3 years</p>
+          <p><b>Employment Type: </b> Full Time</p>
+          <h4 class='font-bold text-2xl mt-4'>Company Overview:</h4>
+          <p>CodeVerse is a product development company that builds scalable digital products for startups and enterprises. We believe in clean code and modern technology stacks.</p>
+
+          <h4 class='font-bold text-2xl mt-4'>Job Description:</h4>
+          <p>As a Full Stack Developer, you will design backend architecture and frontend components using the MERN stack.</p>
+
+            <h4 class='font-bold mt-4'>Roles and Responsibilities:</h4>
+          <ul class='list-disc list-inside'>
+            <li>Build and maintain REST APIs with Express.js.</li>
+            <li>Create reusable React components.</li>
+            <li>Write unit tests and manage MongoDB databases.</li>
+          </ul>
+
+          <p class="mt-2"><b>Skills Required: </b> MongoDB, Express, React, Node.js, Docker</p>
+          <p class="mt-2"><b>Salary: </b> ₹7 - 10 LPA </p>
+
+          
+          
+
+
+
+  <!-- Ratings Section -->
+<div>
+  <h2 class="text-2xl font-semibold mt-4 mb-4">TechNova Solutions Ratings</h2>
+
+  <!-- Flex layout for main content -->
+  <div class="flex flex-col md:flex-row md:justify-between gap-6">
+
+    <!-- Left Side: Stars + Circles -->
+    <div class="flex-1">
+      <!-- Star Rating Summary -->
+      <div class="flex items-center mb-4 space-x-2">
+        <span class="text-green-600 text-xl font-bold">4.0</span>
+        <div class="flex space-x-1">
+          <!-- 5 filled stars -->
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          
+        </div>
+      </div>
+
+      
+    <!-- Right Side: Breakdown Ratings -->
+    <div class="flex-1 space-y-3">
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Career opportunities</span>
+        <span class="text-yellow-500 font-semibold">★★★★ 4.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Comp and Benefits</span>
+        <span class="text-yellow-500 font-semibold">★★★★ 4.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Culture and values</span>
+        <span class="text-yellow-500 font-semibold">★★★★ 4.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Senior management</span>
+        <span class="text-yellow-500 font-semibold">★★★★ 4.0</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+ `
+      },
+       {
+        company: "PixelCraft Innovations",
+        title: "UI/UX Designer",
+        location: "Mumbai, India",
+        description: `
+          <p><b>Experience: </b> 0.6-2 years</p>
+          <p><b>Employment Type: </b> Full Time</p>
+          <h4 class='font-bold text-2xl mt-4'>Company Overview:</h4>
+          <p>PixelCraft is a creative design studio crafting intuitive and user-centric designs for web and mobile apps across industries.</p>
+
+          <h4 class='font-bold text-2xl mt-4'>Job Description:</h4>
+          <p>We are hiring a UI/UX designer to create engaging product experiences and help shape the visual and functional aspects of our digital products.</p>
+
+            <h4 class='font-bold mt-4'>Roles and Responsibilities:</h4>
+          <ul class='list-disc list-inside'>
+            <li>Design wireframes, user flows, and mockups.</li>
+            <li>Collaborate with developers and product teams.</li>
+            <li>Conduct usability testing and research.</li>
+          </ul>
+
+          <p class="mt-2"><b>Skills Required: </b> Figma, Adobe XD, Prototyping, UX Research</p>
+          <p class="mt-2"><b>Salary: </b>  ₹5-8 LPA</p>
+
+          
+          
+
+
+
+  <!-- Ratings Section -->
+<div>
+  <h2 class="text-2xl font-semibold mt-4 mb-4">TechNova Solutions Ratings</h2>
+
+  <!-- Flex layout for main content -->
+  <div class="flex flex-col md:flex-row md:justify-between gap-6">
+
+    <!-- Left Side: Stars + Circles -->
+    <div class="flex-1">
+      <!-- Star Rating Summary -->
+      <div class="flex items-center mb-4 space-x-2">
+        <span class="text-green-600 text-xl font-bold">4.8</span>
+        <div class="flex space-x-1">
+          <!-- 5 filled stars -->
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+          <svg class="w-5 h-5 text-green-500 fill-current" viewBox="0 0 20 20"><polygon points="10 1.5 12.59 7.36 18.82 7.64 13.97 11.88 15.53 18.04 10 14.27 4.47 18.04 6.03 11.88 1.18 7.64 7.41 7.36 10 1.5"/></svg>
+        </div>
+      </div>
+
+      
+    <!-- Right Side: Breakdown Ratings -->
+    <div class="flex-1 space-y-3">
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Career opportunities</span>
+        <span class="text-yellow-500 font-semibold">★★★★★ 5.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Comp and Benefits</span>
+        <span class="text-yellow-500 font-semibold">★★★★★ 5.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Culture and values</span>
+        <span class="text-yellow-500 font-semibold">★★★★ 4.0</span>
+      </div>
+      <div class="flex justify-between items-center border-b pb-1">
+        <span>Senior management</span>
+        <span class="text-yellow-500 font-semibold">★★★★★ 5.0</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+ `
+      },
+    ];
+
+    function showJob(index) {
+      const job = jobs[index];
+      const jobHTML = `
+        <div>
+          <h2 class="text-xl font-bold">${job.title}</h2>
+          <p class="text-sm text-gray-500 mb-2">${job.company} - ${job.location}</p>
+          <div class="text-gray-700 text-sm leading-relaxed">${job.description}</div>
+          <div class="sticky-apply w-full">
+            <a href="carrer.html" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 block text-center">Apply Now</a>
+          </div>
+        </div>
+      `;
+      document.getElementById('jobDetails').innerHTML = jobHTML;
+      document.querySelectorAll('.job-item').forEach(el => el.classList.remove('bg-green-100'));
+      document.querySelectorAll('.job-item')[index].classList.add('bg-green-100');
+    }
+
+    
+    window.onload = () => {
+      showJob(0);
+    };
+  </script>
+
+  <!-- faq script -->
+    <script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const symbol = button.querySelector('span');
+
+        if (content.classList.contains('hidden')) {
+        
+          document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle span').forEach(el => el.textContent = '+');
+
+         
+          content.classList.remove('hidden');
+          symbol.textContent = '−';
+        } else {
+          content.classList.add('hidden');
+          symbol.textContent = '+';
+        }
+      });
+    });
+  </script>
+
+  </body>
+</html>

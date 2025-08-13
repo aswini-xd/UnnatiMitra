@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100">
+    
+    <!-- Navbar section -->
+     <section>
+        
+    <nav
+      class="fixed top-0 w-full bg-gradient-to-r from-blue-500 to-pink-500 shadow-md  z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+      
+        <div class="flex items-center">
+          <img
+            src="img/logo.jpeg"
+            alt="Udyogimitra Logo"
+            class="h-20 w-auto rounded-lg"
+          />
+        </div>
+
+       
+<div class="hidden md:flex flex-1 justify-center">
+  <div class="relative w-1/2">
+    <input
+      id="desktop-search"
+      type="text"
+      placeholder="Search..."
+      class="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none"
+    />
+    <button
+      onclick="clearSearch('desktop-search')"
+      class="absolute inset-y-0 right-2 flex items-center text-gray-500 hover:text-blue-600"
+      title="Clear"
+    >
+      ➜
+    </button>
+  </div>
+</div>
+
+
+        <!-- Menu Links (desktop) -->
+        <div class="hidden md:flex space-x-6 items-end text-white font-medium">
+          <a href="About.html" class="hover:text-yellow-200">About</a>
+          <a href="Project.html" class="hover:text-yellow-200">Project</a>
+          <a href="Services.html" class="hover:text-yellow-200">Services</a>
+          <a href="Event.html" class="hover:text-yellow-200">Event</a>
+          <a href="Livelihood.html" class="hover:text-yellow-200">Livelihood</a>
+          <a href="Education.html" class="hover:text-yellow-200">Education</a>
+          <a href="Carrer.html" class="hover:text-yellow-200">Career</a>
+        </div>
+
+        <!-- Hamburger Icon (mobile) -->
+        <div class="md:hidden">
+          <button id="hamburger-btn">
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500 to-pink-500 z-40 p-6 mt-3 space-y-6 hidden md:hidden text-white"
+    >
+      <button id="close-menu" class="text-xl font-bold mb-4">✖</button>
+      <a href="About.html" class="block text-lg">About</a>
+      <a href="Project.html" class="block text-lg">Project</a>
+      <a href="Services.html" class="block text-lg">Services</a>
+      <a href="Event.html" class="block text-lg">Event</a>
+      <a href="Livelihood.html" class="block text-lg">Livelihood</a>
+      <a href="Education.html" class="block text-lg">Education</a>
+      <a href="Carrer.html" class="block text-lg">Career</a>
+
+      <!-- 🔍 Mobile Search Toggle Button -->
+<button
+  id="mobile-search-btn"
+  class="md:hidden mt-4 bg-white text-black px-4 py-2 rounded flex items-center justify-center"
+>
+  🔍 Show Search
+</button>
+
+<!-- 🔍 Mobile Search Box -->
+<div id="mobile-search-box" class="hidden mt-2 w-full md:hidden px-4">
+  <div class="relative">
+    <input
+      id="mobile-search"
+      type="text"
+      placeholder="Search..."
+      class="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none"
+    />
+    <button
+      onclick="clearSearch('mobile-search')"
+      class="absolute inset-y-0 right-2 flex items-center text-gray-500 hover:text-blue-600"
+      title="Clear"
+    >
+      ➜
+    </button>
+  </div>
+</div>
+
+
+ </div>
+
+    </div>
+    </section>
+
+    <!-- About section -->
+    <section
+      class="max-w-6xl mx-auto mt-24 px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-10 bg-white font-sans text-gray-800"
+    >
+      <div class="w-full md:w-1/2">
+        <div class="text-black font-medium pt-6 text-left w-full mb-10">
+    
+        <a href="Index.html" class="hover:text-red-200">Home</a> &gt; <a href="#" class="text-sm uppercase tracking-widest text-blue-600 font-bold mb-2">About Us</a>
+        </div>
+        <h2 class="text-4xl font-extrabold mb-6 leading-snug text-gray-900">
+          Making Tax <span class="text-blue-500">Simple, Fast &</span><br />
+          Stress-Free.
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          At <strong class="text-blue-600">Udyogimitra</strong> , we believe tax
+          filing and financial compliance shouldn’t feel like a burden. Founded
+          with a mission to simplify taxes for individuals, professionals, and
+          businesses across India, we are your one-stop solution for everything
+          from ITR filing to GST compliance, TDS returns, and startup
+          registrations.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-8">
+          With a customer-first approach,
+          <strong class="text-blue-500">our goal</strong> is to bring clarity,
+          transparency, and peace of mind to your financial journey.
+        </p>
+      </div>
+
+      <div class="w-full md:w-1/2">
+        <video autoplay muted loop playsinline class="w-full h-full rounded-lg">
+          <source
+            src="./img/about.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Why? section -->
+
+    <div class="container mx-auto mt-10 mb-10 px-10">
+      <h1 class="text-4xl text-gray-700 font-extrabold text-center mb-8">
+        Why Udyogimitra?
+      </h1>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        <div
+          class="p-6 shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white rounded text-left"
+        >
+          <i class="ri-stack-line text-4xl text-blue-500 mb-4"></i>
+          <h2 class="text-xl font-bold mb-2">Fast, Easy & Paperless</h2>
+          <p class="text-gray-600">
+            We combine technology with expert support to ensure your filings are
+            done accurately and on time—without the hassle.
+          </p>
+        </div>
+
+        <div
+          class="p-6 shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white rounded text-left"
+        >
+          <i class="ri-shield-check-line text-4xl text-blue-500 mb-4"></i>
+          <h2 class="text-xl font-bold mb-2">Human Help, When You Need It</h2>
+          <p class="text-gray-600">
+            Our team of tax experts, CAs, and financial advisors are here to
+            guide you every step of the way.
+          </p>
+        </div>
+
+        <div
+          class="p-6 shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white rounded text-left"
+        >
+          <i class="ri-customer-service-2-line text-4xl text-blue-500 mb-4"></i>
+          <h2 class="text-xl font-bold mb-2">Affordable Plans</h2>
+          <p class="text-gray-600">
+            Whether you’re a salaried employee, freelancer, startup founder, or
+            a growing business—we offer tailored services that fit your budget.
+          </p>
+        </div>
+
+        <div
+          class="p-6 shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300 bg-white rounded text-left"
+        >
+          <i class="ri-time-line text-4xl text-blue-500 mb-4"></i>
+          <h2 class="text-xl font-bold mb-2">Compliance You Can Trust:</h2>
+          <p class="text-gray-600">
+            Accuracy and confidentiality are at the core of everything we do.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Services -->
+    <div class="container mx-auto mt-10 mb-10 px-10">
+      <h1 class="text-2xl text-gray-600 font-medium">Our Services</h1>
+      <h3 class="bg-gray-300 w-full h-1 border"></h3>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center mt-10"
+      >
+        <div
+          class="shadow-md w-56 h-56 p-5 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          <div>
+            <img
+              src="./img/icon-8.jpg"
+              alt="ITR"
+              class="w-16 h-16 mb-2"
+            />
+            <h1 class="text-xl font-bold">File ITR</h1>
+          </div>
+          <h5 class="text-gray-400 font-medium text-sm">
+            Quick & Accurate Filing
+          </h5>
+        </div>
+
+        <div
+          class="shadow-md w-56 h-56 p-5 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          <div>
+            <img
+              src="./img/icon-9.jpg"
+              alt="GST"
+              class="w-16 h-16 mb-2"
+            />
+            <h1 class="text-xl font-bold">File GST</h1>
+          </div>
+          <h5 class="text-gray-400 font-medium text-sm">
+            Timely GST Compliance
+          </h5>
+        </div>
+
+        <div
+          class="shadow-md w-56 h-56 p-5 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          <div>
+            <img
+              src="./img/icon-10.jpg"
+              alt="TDS"
+              class="w-16 h-16 mb-2"
+            />
+            <h1 class="text-xl font-bold">TDS Returns</h1>
+          </div>
+          <h5 class="text-gray-400 font-medium text-sm">
+            Hassle-Free TDS Filing
+          </h5>
+        </div>
+
+        <div
+          class="shadow-md w-56 h-56 p-5 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          <div>
+            <img
+              src="./img/icon-11.jpg"
+              alt="Startup"
+              class="w-16 h-16 mb-2"
+            />
+            <h1 class="text-xl font-bold">Company & Startup Registration</h1>
+          </div>
+          <h5 class="text-gray-400 font-medium text-sm">Easy Business Setup</h5>
+        </div>
+
+        <div
+          class="shadow-md w-56 h-56 p-5 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          <div>
+            <img
+              src="./img/icon-12.jpg"
+              alt="Accounting"
+              class="w-16 h-16 mb-2"
+            />
+            <h1 class="text-xl font-bold text-[16px] leading-tight">
+              Accounting & Bookkeeping
+            </h1>
+          </div>
+          <h5 class="text-gray-400 font-medium text-sm">
+            Clean Financial Records
+          </h5>
+        </div>
+
+        <div
+          class="shadow-md w-56 h-56 p-5 rounded-2xl flex flex-col justify-between hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          <div>
+            <img
+              src="./img/icon-13.jpg"
+              alt="PAN DSC"
+              class="w-16 h-16 mb-2"
+            />
+            <h1 class="text-xl font-bold text-[16px] leading-tight">
+              PAN, DSC & More
+            </h1>
+          </div>
+          <h5 class="text-gray-400 font-medium text-sm">
+            Essential Govt. Services
+          </h5>
+        </div>
+      </div>
+      <h1 class="mt-8 mb-5 text-4xl text-center font-bold">
+        Whether you’re planning your first tax return or need end-to-end support
+        for your business, <strong class="text-blue-600">Udyogimitra</strong> is
+        here to take the stress out of your numbers.
+      </h1>
+    </div>
+
+      <!-- MISSION VISION -->
+
+    <div class="container mx-auto px-6 py-16 bg-gray-200 mb-10">
+     
+      <div class="text-left mb-12 px-6 md:px-20">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">
+          Empowering India’s Financial Future
+        </h1>
+        <p class="text-lg text-gray-600 mt-4 max-w-3xl">
+          Together Toward Financial Clarity — Empowering Every Indian with
+          Trusted Tax Solutions
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col lg:flex-row justify-between items-center gap-12"
+      >
+        
+        <div
+          class="flex flex-col items-center text-center lg:items-start lg:text-left max-w-sm px-6 md:px-10"
+        >
+          <img
+            src="./img/icon-14.jpg"
+            alt="Vision Icon"
+            class="w-16 h-16 mb-4"
+          />
+          <h2 class="text-2xl font-bold text-blue-700 mb-2">Our Vision</h2>
+          <p class="text-gray-700 text-base leading-relaxed">
+            To empower individuals and businesses in India with accessible,
+            reliable, and smart financial solutions.
+          </p>
+        </div>
+
+       
+        <div class="flex justify-center w-full lg:w-[360px] hover:scale-105  transition-all duration-300">
+          <img
+            src="./img/icon-15.jpg"
+            alt="App Preview"
+            class="w-48 h-auto rounded-xl "
+          />
+        </div>
+
+      
+        <div
+          class="flex flex-col items-center text-center lg:items-start lg:text-left max-w-sm px-6 md:px-10"
+        >
+          <img
+            src="./img/icon-16.jpg"
+            alt="Mission Icon"
+            class="w-16 h-16 mb-4"
+          />
+          <h2 class="text-2xl font-bold text-blue-700 mb-2">Our Mission</h2>
+          <p class="text-gray-700 text-base leading-relaxed">
+            To simplify complex tax processes through technology and
+            expert-driven support—so our clients can focus on what they do best.
+          </p>
+        </div>
+      </div>
+    </div>
+ 
+
+     <!-- footer section -->
+           
+     <footer class="mt-10 bg-gradient-to-r from-pink-400 to-blue-400 text-black border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
+    
+    
+    <div>
+        <img
+            src="img/img-2.png"alt="Udyogimitra Logo"class="h-20 w-auto rounded-full bg-black"/>
+      <p class="text-sm leading-relaxed text-black font-medium">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nulla quae veniam blanditiis facilis beatae sint consequatur nobis perferendis! Perspiciatis officiis dolores saepe numquam ipsum, sit modi tenetur ut quisquam asperiores accusamus cum fuga in quas, eligendi iste, veritatis assumenda?
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Company</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="About.html" class="hover:text-blue-600">Who We Are</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Our Services</a> </li>
+        <li><a href="Carrer.html" class="hover:text-blue-600">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Services</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="Services.html" class="hover:text-blue-600">Services 1</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 2</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 3</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 4</a></li>
+      </ul>
+    </div>
+
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Customer</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="Project.html" class="hover:text-blue-600">Client Support</a></li>
+        <li><a href="Project.html" class="hover:text-blue-600">Help Center</a></li>
+        <li><a href="Project.html" class="hover:text-blue-600">System Status</a></li>
+        <li><a href="Project.html" class="hover:text-blue-600">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="border-t border-gray-200 text-center text-sm text-black py-4 px-4 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+    <p>&copy; 2025 UDYOGIMITRA Is Proudly Powered By <a href="Index.html" class="text-blue-600">UDYOGIMITRA</a></p>
+    <div class="space-x-4 mt-2 md:mt-0">
+      <a href="Privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="T&C.html" class="hover:underline">Terms And Conditions</a>
+      <a href="#" class="hover:underline">Copyright</a>
+    </div>
+  </div>
+     </footer>
+
+     <!-- Nav Script -->
+   <script>
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeMenu = document.getElementById("close-menu");
+  const searchBtn = document.getElementById("mobile-search-btn");
+  const searchBox = document.getElementById("mobile-search-box");
+
+ 
+  hamburgerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("hidden");
+  });
+
+
+  closeMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.add("hidden");
+    searchBox.classList.add("hidden");
+  });
+
+
+  searchBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    searchBox.classList.toggle("hidden");
+
+    const input = document.getElementById("mobile-search");
+    if (!searchBox.classList.contains("hidden")) {
+      setTimeout(() => input.focus(), 100);
+    }
+  });
+
+  
+  searchBox.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.classList.contains("hidden")) {
+      mobileMenu.classList.add("hidden");
+      searchBox.classList.add("hidden");
+    }
+  });
+
+ 
+  function clearSearch(inputId) {
+    const input = document.getElementById(inputId);
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+  }
+   </script>
+
+</body>
+</html>

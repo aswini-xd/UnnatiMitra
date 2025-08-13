@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100">
+    
+    <!-- Navbar section -->
+     <section>
+        
+    <nav
+      class="fixed top-0 w-full bg-gradient-to-r from-blue-500 to-pink-500 shadow-md  z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+      
+        <div class="flex items-center">
+          <img
+            src="img/logo.jpeg"
+            alt="Udyogimitra Logo"
+            class="h-20 w-auto rounded-lg"
+          />
+        </div>
+
+       
+<div class="hidden md:flex flex-1 justify-center">
+  <div class="relative w-1/2">
+    <input
+      id="desktop-search"
+      type="text"
+      placeholder="Search..."
+      class="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none"
+    />
+    <button
+      onclick="clearSearch('desktop-search')"
+      class="absolute inset-y-0 right-2 flex items-center text-gray-500 hover:text-blue-600"
+      title="Clear"
+    >
+      ➜
+    </button>
+  </div>
+</div>
+
+
+        <!-- Menu Links (desktop) -->
+        <div class="hidden md:flex space-x-6 items-end text-white font-medium">
+          <a href="About.html" class="hover:text-yellow-200">About</a>
+          <a href="Project.html" class="hover:text-yellow-200">Project</a>
+          <a href="Services.html" class="hover:text-yellow-200">Services</a>
+          <a href="Event.html" class="hover:text-yellow-200">Event</a>
+          <a href="Livelihood.html" class="hover:text-yellow-200">Livelihood</a>
+          <a href="Education.html" class="hover:text-yellow-200">Education</a>
+          <a href="Carrer.html" class="hover:text-yellow-200">Career</a>
+        </div>
+
+        <!-- Hamburger Icon (mobile) -->
+        <div class="md:hidden">
+          <button id="hamburger-btn">
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500 to-pink-500 z-40 p-6 mt-3 space-y-6 hidden md:hidden text-white"
+    >
+      <button id="close-menu" class="text-xl font-bold mb-4">✖</button>
+      <a href="About.html" class="block text-lg">About</a>
+      <a href="Project.html" class="block text-lg">Project</a>
+      <a href="Services.html" class="block text-lg">Services</a>
+      <a href="Event.html" class="block text-lg">Event</a>
+      <a href="Livelihood.html" class="block text-lg">Livelihood</a>
+      <a href="Education.html" class="block text-lg">Education</a>
+      <a href="Carrer.html" class="block text-lg">Career</a>
+
+      <!-- 🔍 Mobile Search Toggle Button -->
+<button
+  id="mobile-search-btn"
+  class="md:hidden mt-4 bg-white text-black px-4 py-2 rounded flex items-center justify-center"
+>
+  🔍 Show Search
+</button>
+
+<!-- 🔍 Mobile Search Box -->
+<div id="mobile-search-box" class="hidden mt-2 w-full md:hidden px-4">
+  <div class="relative">
+    <input
+      id="mobile-search"
+      type="text"
+      placeholder="Search..."
+      class="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none"
+    />
+    <button
+      onclick="clearSearch('mobile-search')"
+      class="absolute inset-y-0 right-2 flex items-center text-gray-500 hover:text-blue-600"
+      title="Clear"
+    >
+      ➜
+    </button>
+  </div>
+</div>
+
+
+ </div>
+
+    </div>
+    </section>
+
+<!-- 404 Section -->
+<section class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="text-center">
+    <img src="./img/404.jpg" alt="404" class="mx-auto w-full max-w-lg">
+    <h1 class="text-4xl font-bold text-gray-800 mt-6">Page Not Found</h1>
+    <p class="text-gray-600 mt-2">The page you’re looking for doesn’t exist or has been moved.</p>
+    <a href="index.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Go Back Home</a>
+  </div>
+</section>
+
+
+     <!-- footer section -->
+           
+     <footer class="mt-10 bg-gradient-to-r from-pink-400 to-blue-400 text-black border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
+    
+    
+    <div>
+        <img
+            src="img/img-2.png"alt="Udyogimitra Logo"class="h-20 w-auto rounded-full bg-black"/>
+      <p class="text-sm leading-relaxed text-black font-medium">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nulla quae veniam blanditiis facilis beatae sint consequatur nobis perferendis! Perspiciatis officiis dolores saepe numquam ipsum, sit modi tenetur ut quisquam asperiores accusamus cum fuga in quas, eligendi iste, veritatis assumenda?
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Company</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="About.html" class="hover:text-blue-600">Who We Are</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Our Services</a> </li>
+        <li><a href="Carrer.html" class="hover:text-blue-600">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Services</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="Services.html" class="hover:text-blue-600">Services 1</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 2</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 3</a></li>
+        <li><a href="Services.html" class="hover:text-blue-600">Services 4</a></li>
+      </ul>
+    </div>
+
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Customer</h3>
+      <ul class="space-y-2 text-sm font-medium">
+        <li><a href="Livelihood.html" class="hover:text-blue-600">Client Support</a></li>
+        <li><a href="Livelihood.html" class="hover:text-blue-600">Help Center</a></li>
+        <li><a href="Livelihood.html" class="hover:text-blue-600">System Status</a></li>
+        <li><a href="Livelihood.html" class="hover:text-blue-600">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="border-t border-gray-200 text-center text-sm text-black py-4 px-4 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+    <p>&copy; 2025 UDYOGIMITRA Is Proudly Powered By <a href="Index.html" class="text-blue-600">UDYOGIMITRA</a></p>
+    <div class="space-x-4 mt-2 md:mt-0">
+      <a href="Privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="T&C.html" class="hover:underline">Terms And Conditions</a>
+      <a href="Copy.html" class="hover:underline">Copyright</a>
+    </div>
+  </div>
+     </footer>
+
+     <!-- Nav Script -->
+   <script>
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeMenu = document.getElementById("close-menu");
+  const searchBtn = document.getElementById("mobile-search-btn");
+  const searchBox = document.getElementById("mobile-search-box");
+
+ 
+  hamburgerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("hidden");
+  });
+
+
+  closeMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.add("hidden");
+    searchBox.classList.add("hidden");
+  });
+
+
+  searchBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    searchBox.classList.toggle("hidden");
+
+    const input = document.getElementById("mobile-search");
+    if (!searchBox.classList.contains("hidden")) {
+      setTimeout(() => input.focus(), 100);
+    }
+  });
+
+  
+  searchBox.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.classList.contains("hidden")) {
+      mobileMenu.classList.add("hidden");
+      searchBox.classList.add("hidden");
+    }
+  });
+
+ 
+  function clearSearch(inputId) {
+    const input = document.getElementById(inputId);
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+  }
+   </script>
+
+</body>
+</html>
